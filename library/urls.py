@@ -21,5 +21,6 @@ urlpatterns = {
     url(r'^admin/', admin.site.urls),
     url(r'^stu/', include('stu.urls')),
     url(r'^manager/', include('manager.urls')),
+    url(r'^search/', include('haystack.urls')),
 
 }

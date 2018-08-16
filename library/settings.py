@@ -1,3 +1,4 @@
+#coding=utf-8
 """
 Django settings for library project.
 
@@ -40,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'stu',
-    'manager'
+    'manager',
+    'haystack',
 ]
 
 MIDDLEWARE = [
@@ -84,7 +86,7 @@ DATABASES = {
         'NAME': 'librarys',
         'USER': 'root',
         'PASSWORD': 'woaini123',
-        'HOST': '127.0.0.1',
+        'HOST': '192.168.1.163',
         'PORT': '3306',
     }
 }
@@ -135,3 +137,16 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static', 'img'),
     os.path.join(BASE_DIR, 'static', 'Georgia.ttf'),
 ]
+
+
+#指定路径索引
+HAYSTACK_CONNECTIONS = {
+        'default': {
+            'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+            'PATH': os.path.join(BASE_DIR, 'whoosh_index'),
+        },
+    }
+
+
+#实时生成索引
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'

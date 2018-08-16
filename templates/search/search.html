@@ -1,0 +1,31 @@
+{% extends 'base.html'%}
+
+{% block middle %}
+
+    <div class="archives">
+    {% if query %}
+        <p>hello world</p>
+        {% for c_post in page.object_list %}
+            <article class="archive-article archive-type-post">
+              <div class="archive-article-inner">
+                <header class="archive-article-header">
+{#                <a href="#" class="archive-article-date">#}
+{#                     <time>{{ c_post.object.created|date:'Y-m' }}</time>#}
+{#                </a>#}
+
+                 <h1 itemprop="name">
+                      {{ c_post.object.iname }},{{ c_post.object.iauthor }}<a class="archive-article-title" target="_blank" href="/bookBorrow/">借阅</a>
+                 </h1>
+                 </header>
+              </div>
+            </article>
+
+
+        {% endfor %}
+        {% else %}
+          无记录
+    {% endif %}
+
+</div>
+{% endblock %}
+
