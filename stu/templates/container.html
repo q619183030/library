@@ -1,0 +1,25 @@
+{% extends 'login.html' %}
+
+{% block container %}
+    <div class="page-container">
+            <h1>Login</h1>
+            <form action="" method="post">
+				<div>
+					<input type="text" name="username" class="username" placeholder="Username" autocomplete="off"/>
+				</div>
+                <div>
+					<input type="password" name="password" class="password" placeholder="Password" oncontextmenu="return false" onpaste="return false" />
+                </div>
+{#                <div>#}
+{#					<input type="text" name="validatecode" class="validatecode" placeholder="validatecode" autocomplete="off"/>#}
+{#				</div>#}
+                <button id="submit" type="button" style="margin-bottom: 30px">Sign in</button>
+
+                <a href="/stu/register/" id="register" style="font-size: 20px;text-decoration:none ">注册</a>
+            </form>
+            <div class="connect">
+                <p>If we can only encounter each other rather than stay with each other,then I wish we had never encountered.</p>
+				<p style="margin-top:20px;">如果只是遇见，不能停留，不如不遇见。</p>
+            </div>
+        </div>
+{% endblock %}
