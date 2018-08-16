@@ -1,1 +1,110 @@
 {% extends 'base.html' %}
+
+{% block middle %}
+     <div id="middle" style="line-height:50px;text-align:center;">
+         <form action="/stu/changePwd/" method="post">
+             {% csrf_token %}
+         <div>
+            <div class="" style="text-align:center">
+                <span class="" style="width: 80px;">&emsp;旧密码</span>
+                <input type="password" name="oldPassword" id="oldPassword" class="form-control" />
+            </div>
+            <div class="" style="text-align:center">
+                <span class="" style="width: 80px;">&emsp;新密码</span>
+                <input type="password" name="newPassword" id="newPassword" class="form-control" />
+            </div>
+            <div class="" style="text-align:center">
+                <span class="" style="width: 80px;">确认密码</span>
+                <input type="password" name="newPasswordAgain" id="newPasswordAgain" class="form-control" />
+            </div>
+             <div style="text-align:center"><button type="button" id="changePasswordBtn" class="btn btn-default" data-toggle="modal" data-target="#alertTip" data-whatever="重置密码？" style="text-align:center">提&nbsp;&nbsp;交</button></div>
+         </div>
+     </div>
+</form>
+
+{% endblock %}
+
+{#{% extends 'base.html' %}#}
+{#{% block container %}#}
+{#<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>#}
+{#    <script></script>#}
+{#    <script>#}
+{##}
+{#        function checkUname(){#}
+{#            //1.获取文本框内容#}
+{#            var uname = $('#uname').val();#}
+{##}
+{#            //2.非空校验#}
+{#            if(uname.length==0){#}
+{#                $('#unameSpan').html('*');#}
+{#                $('#unameSpan').css('color','red' );#}
+{#                $('#unameSpan').css("fontSize","26px" );#}
+{##}
+{#            }else{#}
+{#            //3.判断唯一性#}
+{#                $.get('/stu/register/',{'uname':uname},function(result){#}
+{#                    //4.根据服务器端的响应信息进行页面更新#}
+{#                    if(result.flag){#}
+{#                        $('#unameSpan').html('此用户名太受欢迎了，请换一个吧~');#}
+{#                        $('#unameSpan').css('color','red');#}
+{#                    }else{#}
+{#                        $('#unameSpan').html('√');#}
+{#                        $('#unameSpan').css('color','green');#}
+{#                    }#}
+{#                })#}
+{#            }#}
+{#        }#}
+{#        function checkpwd() {#}
+{#            var pwd1=$('#pwd1').val();#}
+{#            var pwd2=$('#pwd2').val();#}
+{#            if(pwd1|pwd2){#}
+{##}
+{#                if(pwd1==pwd2) {#}
+{#                    $('#pwdSpan').html('√');#}
+{#                    $('#pwdSpan').css('color','green');#}
+{#                }#}
+{#                else {#}
+{#                    $('#pwdSpan').html('密码不一致');#}
+{#                    $('#pwdSpan').css('color','red');#}
+{#                }#}
+{#            }else {#}
+{#                    $('#pwdSpan').html('密码不能为空');#}
+{#                    $('#pwdSpan').css('color','red');#}
+{#            }#}
+{#        }#}
+{##}
+{#    </script>#}
+{#    <form action="/stu/register/" method="post" style="width: 420px" >#}
+{#        {% csrf_token %}#}
+{#        <tr>#}
+{#            <td>#}
+{#                 <input type="text" name="uaccount" placeholder="account" id="uname"  onblur="checkUname()">#}
+{#                <span id="unameSpan"></span>#}
+{#            </td>#}
+{#            <td><span id="unameSpan"></span></td>#}
+{##}
+{#        </tr>#}
+{#        <tr>#}
+{#            <td><input type="password" name="upwd" placeholder="password" id="pwd1" onblur="checkpwd()"></td>#}
+{#        </tr>#}
+{#        <tr>#}
+{#            <td>#}
+{#                <input type="password" name="upwd" placeholder="Repeat the password" id="pwd2" onblur="checkpwd()">#}
+{#                <span id="pwdSpan"></span>#}
+{#            </td>#}
+{#        </tr>#}
+{#        <tr>#}
+{#            <td><input type="text" name="uphone" placeholder="phone"></td>#}
+{#        </tr>#}
+{#        <tr>#}
+{#            <td><input type="text" name="uemail" placeholder="email"></td>#}
+{#        </tr>#}
+{#        <tr >#}
+{#            <td><input type="submit" value="register" style="background-color: #ef4300;margin-left: 15px;"></td>#}
+{#        </tr>#}
+{##}
+{#    </form>#}
+{##}
+{#{% endblock %}#}
+
+

@@ -28,9 +28,9 @@ h1 {
 
 form {
     position: relative;
-    width: 305px;
+    width: 400px;
     margin: 15px auto 0 auto;
-    text-align: center;
+    text-align: left;
 }
 
 input {
@@ -194,5 +194,11 @@ button:active {
 	border:1px solid #4FB2EF;
 	border-radius:4px;
 }
+#unameSpan{
+    padding: 0px 20px;
 
+}
+.registrer{
+    margin-left: 30px;
+}
 
