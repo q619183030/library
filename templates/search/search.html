@@ -2,9 +2,9 @@
 
 {% block middle %}
 
-    <div class="archives">
+    <div id="middle" style="text-align: center">
     {% if query %}
-        <p>hello world</p>
+        <p>搜索结果</p>
         {% for c_post in page.object_list %}
             <article class="archive-article archive-type-post">
               <div class="archive-article-inner">

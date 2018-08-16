@@ -65,9 +65,7 @@ def updatePwd_index(request):
         form = ChangepwdForm
         return render(request,'changePwd.html',{'form':form})
 
-<<<<<<< Updated upstream
-=======
-    return None
+    # return None
 
 
 def bookQuery_index(request):
@@ -86,4 +84,3 @@ def bookBack_index(request):
 
 def bookBorrowState_index(request):
     return None
->>>>>>> Stashed changes
