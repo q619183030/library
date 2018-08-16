@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from django.shortcuts import render
-
+from models import *
 # Create your views here.
 from stu.forms import ChangepwdForm
 from stu.models import User
@@ -65,3 +65,22 @@ def updatePwd_index(request):
         form = ChangepwdForm
         return render(request,'changePwd.html',{'form':form})
 
+    # return None
+
+
+def bookQuery_index(request):
+
+    return render(request, 'bookQuery.html')
+
+
+def bookBorrow_index(request):
+    return None
+
+
+
+def bookBack_index(request):
+    return render(request,'bookBack.html')
+
+
+def bookBorrowState_index(request):
+    return None
