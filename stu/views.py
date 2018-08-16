@@ -5,6 +5,7 @@ from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from django.shortcuts import render
 
 # Create your views here.
+from stu.forms import ChangepwdForm
 from stu.models import User
 
 
@@ -53,4 +54,14 @@ def existView(request):
 def home_view(request):
     return render(request,'middle.html')
 
+#更改密码
+def updatePwd_index(request):
+    if request.method=='POST':
+        form=ChangepwdForm(request.POST)
+        newpassword=request.POST.get('newPassword')
+        oldpassword=request.POST.get('oldPassword')
+        return  render(request,'changePwd.html',{'newpassword':newpassword,'oldpassword':oldpassword})
+    else:
+        form = ChangepwdForm
+        return render(request,'changePwd.html',{'form':form})
 
