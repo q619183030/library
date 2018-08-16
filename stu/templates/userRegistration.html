@@ -1,0 +1,28 @@
+{% extends 'login.html' %}
+{% block container %}
+    {% csrf_token %}
+
+        <form action="/stu/register/" method="post">
+
+        <tr>
+            <td><input type="text" name="uaccount" placeholder="account"></td>
+        </tr>
+        <tr>
+            <td><input type="password" name="upwd" placeholder="password"></td>
+        </tr>
+        <tr>
+            <td><input type="password" name="upwd" placeholder="Repeat the password"></td>
+        </tr>
+        <tr>
+            <td><input type="text" name="uphone" placeholder="phone"></td>
+        </tr>
+        <tr>
+            <td><input type="text" name="uemail" placeholder="email"></td>
+        </tr>
+        <tr>
+            <input type="submit" value="register" style="background-color: #ef4300">
+        </tr>
+
+        </form>
+
+{% endblock %}
