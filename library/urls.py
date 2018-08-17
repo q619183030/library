@@ -22,5 +22,5 @@ urlpatterns = {
     url(r'^stu/', include('stu.urls')),
     url(r'^manager/', include('manager.urls')),
     url(r'^search/', include('haystack.urls')),
-
+    url(r'^book/', include('stu.urls')),
 }

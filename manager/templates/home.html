@@ -1,12 +1,33 @@
 {% extends 'base.html' %}
 
-  {% block middle %}
+{% block title %}
+首页
+{% endblock %}
+
+{% block left %}
+
+        <div id="left">
+            <ul>
+                <li class="Navigation"><a href="">导航栏</a></li>
+                <li><a href="/manager/home/">首页</a></li>
+                <li><a href="/manager/opratebook/">查询书籍</a></li>
+                <li><a href="/manager/searchall/">查询借阅信息</a></li>
+                <li><a href="/manager/addbooks/">添加书籍</a></li>
+                <li><a href="/manager/updatepwd/">修改密码</a></li>
+            </ul>
+        </div>
+
+{% endblock %}
+
+
+
+{% block middle %}
     <div id="middle">
         <h3>图书馆管理系统</h3>
         <p>地址：北京市海淀区西三旗建材西路尚学堂</p>
         <p>开馆时间：上午9：00—12：00，下午14：00-18：00</p>
         <p>图书馆电话：12345678900</p>
-        <p>馆长姓名：XXX</p>
+        <p>馆长姓名：李晓阔</p>
         <p>馆长邮箱：110@163.com</p>
         <p>本馆创建时间：2018年8月</p>
         <p>本馆藏书量：20万</p>
@@ -26,4 +47,5 @@
 
 北京大学图书馆非常重视数字图书馆的研究和建设。2000年与校内其它单位联合成立的北京大学数字图书馆研究所开展了有关数字图书馆模式、标准规范、数据模型、关键技术、互操作层与互操作标准、数字图书馆门户等的研究，取得了一系列成果，并开始大规模应用实践，为北京大学数字图书馆的建设奠定了技术基础。</p>
     </div>
-  {% endblock %}
+{% endblock %}
+

@@ -29,3 +29,23 @@
 </div>
 {% endblock %}
 
+{% block footerjs %}
+<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>
+    function borrow(inum) {
+        $.ajax({
+            url:'/stu/jieyueshuji/',
+            type:'get',
+            data:{
+               'inum':inum
+            },
+            async:true,
+            success:function (result) {
+                alert(result.flag)
+            }
+        })
+    }
+
+</script>
+{% endblock %}
+

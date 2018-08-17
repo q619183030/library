@@ -9,7 +9,7 @@ from django.db import models
 #普通用户表
 class User(models.Model):
     uname=models.CharField(max_length=10)
-    uaccount=models.CharField(max_length=30)
+    uaccount=models.CharField(max_length=30,)
     upwd=models.CharField(max_length=50)
     uphone=models.PositiveIntegerField()
     uemail=models.EmailField()
@@ -66,8 +66,6 @@ class Information(models.Model):
         return u'Information.%s'%self.iname
 
 
-
-
 #图书借阅表
 class BookBorrowing(models.Model):
     bid=models.PositiveIntegerField()
@@ -85,4 +83,5 @@ class BookBorrowing(models.Model):
 
     def __unicode__(self):
         return u'BookBorrowing.%s'%self.bname
+
 
