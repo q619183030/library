@@ -1,4 +1,10 @@
 {% extends 'base.html'%}
+<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<script>
+
+</script>
+
 
 {% block middle %}
 
@@ -12,6 +18,13 @@
 {#                <a href="#" class="archive-article-date">#}
 {#                     <time>{{ c_post.object.created|date:'Y-m' }}</time>#}
 {#                </a>#}
+
+                    <form action="/stu/bookBorrow/" method="get">
+                        书名：<span>{{ c_post.object.iname }}</span>
+                        作者：<span>{{ c_post.object.iauthor }}</span>
+                        <input type="submit" name="bo" value="借阅">
+
+                    </form>
 
                  <h1 itemprop="name">
                       {{ c_post.object.iname }},{{ c_post.object.iauthor }}<a class="archive-article-title" target="_blank" href="/bookBorrow/">借阅</a>

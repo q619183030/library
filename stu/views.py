@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+import jsonpickle
 from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from django.shortcuts import render
 from models import *
@@ -74,7 +75,11 @@ def bookQuery_index(request):
 
 
 def bookBorrow_index(request):
-    return None
+    # user=jsonpickle.loads(request.session['user'])
+    user='zhangsan'
+    bookname=request.GET.get(id='bookname').count()
+    print bookname
+    return render(request,'bookBorrow.html',{'user':user,'bookname':bookname})
 
 
 
@@ -83,4 +88,26 @@ def bookBack_index(request):
 
 
 def bookBorrowState_index(request):
-    return None
+    # user=jsonpickle.loads(request.session['user'])
+    user = 'zhangsan'
+    ibooks=BookBorrowing.objects.filter(bname=user)
+
+    # booksinfo=[]
+    # for ibook in ibooks:
+    #
+    #     btime=ibook.get(bname=user).borrow
+    #     bookid=ibook.get(bname=user).binfo_id
+    #     print bookid
+    #     information=Information.objects.filter(inum=bookid)
+    #     bookname=information.get(inum=bookid).iname
+    #     bookinfo=[btime,bookid,bookname]
+    #     booksinfo.append(bookinfo)
+    # print booksinfo
+
+
+
+
+    # ibookstr=ibooks.get()
+
+
+    return render(request,'bookBorrowState.html',{'books':ibooks})
