@@ -23,5 +23,4 @@ urlpatterns=[
     url(r'^jiaoyan/$', views.jiaoyan_index),
     url(r'^borrow/(\d+)$', views.borrow_index),
     url(r'^jieyueshuji/$', views.jieyueshuji_index),
-
 ]
