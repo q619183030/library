@@ -1,11 +1,13 @@
 {% extends 'base.html' %}
  {% block middle %}
  {% for book in books %}
-     <span>图书名称：{{ book.binfo.iname }}</span><span>图书编号：{{ book.binfo_id }}</span>
-     <span>借阅日期：{{ book.borrow }}</span><span>应还日期：{{ book.borrow|date:"Y-m-d" }}</span>
+     <span>图书名称：{{ book.binfo.iname }}</span>&emsp;<span>图书编号：{{ book.binfo_id }}</span>&emsp;
+     <span>借阅日期：{{ book.borrow|date:"Y年 m月 d日" }}</span>&emsp;<span>应还日期：{{ book.borrow|date:"Y年" }}{{ book.borrow|date:"m"|add:'1' }}月{{ book.borrow|date:"d日" }}</span>
+     &emsp;&emsp;
+
+
+     <a href="/stu/reLoadBook/{{ book.binfo_id }}">续借</a><a href="/stu/returnBook/{{ book.binfo_id }}">归还</a>
      <br>
-
-
 
  {% endfor %}
  {% endblock %}

@@ -81,7 +81,7 @@ def bookBorrow_index(request):
     # user=jsonpickle.loads(request.session['user'])
      user='zhangsan'
      bookname=request.GET.get(id='bookname').count()
-     print bookname
+
      return render(request,'bookBorrow.html',{'user':user,'bookname':bookname})
 
 
@@ -89,7 +89,7 @@ def bookBorrow_index(request):
 def bookBack_index(request):
     return render(request,'bookBack.html')
 
-
+#查询借阅状态
 def bookBorrowState_index(request):
 # user=jsonpickle.loads(request.session['user'])
     user = 'zhangsan'
@@ -157,4 +157,30 @@ def jieyueshuji_index(request):
             return JsonResponse({'flag': message})
     return JsonResponse({'flag':message})
     # return JsonResponse({'flag': False})
+
+import datetime
+def reLoadBook(request,borrownum):
+    book=BookBorrowing.objects.get(bnumber=borrownum)
+    date=datetime.datetime.now()
+    book.borrow=date
+    book.save()
+    # user=jsonpickle.loads(request.session['user'])
+    return HttpResponseRedirect('/stu/bookBorrowState/')
+
+
+def returnBook(request,borrownum):
+    book = BookBorrowing.objects.get(bnumber=borrownum)
+    user=book.buser.id
+    book.delete()
+    book1=Information.objects.get(inum=borrownum)
+    book1.iamount +=1
+    book1.save()
+    book2=User.objects.get(id=user)
+    book2.unum +=1
+    book2.save()
+
+
+    return HttpResponseRedirect('/stu/bookBorrowState/')
+
+
 
