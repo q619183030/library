@@ -71,7 +71,7 @@ class BookBorrowing(models.Model):
     bid=models.PositiveIntegerField()
     bname=models.CharField(max_length=30)
     bnumber=models.PositiveIntegerField()
-    borrow=models.TimeField(auto_now_add=True)
+    borrow=models.DateField(auto_now_add=True)
     # back=models.TimeField()
     #Information外键
     binfo=models.ForeignKey(Information)
@@ -82,6 +82,6 @@ class BookBorrowing(models.Model):
         db_table='T_bookborrowing'
 
     def __unicode__(self):
-        return u'BookBorrowing.%s'%self.bname
+        return u'user:%s,booknum:%s,btime:%s' % (self.bname, self.bnumber, self.borrow)
 
 

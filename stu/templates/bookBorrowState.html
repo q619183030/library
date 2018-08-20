@@ -1,7 +1,11 @@
 {% extends 'base.html' %}
+ {% block middle %}
+ {% for book in books %}
+     <span>图书名称：{{ book.binfo.iname }}</span><span>图书编号：{{ book.binfo_id }}</span>
+     <span>借阅日期：{{ book.borrow }}</span><span>应还日期：{{ book.borrow|date:"Y-m-d" }}</span>
+     <br>
 
-{% block middle %}
-    <div id="middle">
 
-    </div>
-{% endblock %}
+
+ {% endfor %}
+ {% endblock %}
