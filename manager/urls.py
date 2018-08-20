@@ -12,4 +12,5 @@ urlpatterns=[
     url(r'^searchall/$', views.searchAll_view),
     url(r'^addbooks/$', views.addBooks_view),
     url(r'^updatepwd/$', views.updatePwd_view),
+
 ]
